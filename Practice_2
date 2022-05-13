@@ -1,47 +1,47 @@
 //Сортировка Шелла
-#включить <iostream>
-использование пространства имен std;
+#include <iostream>
+using namespace std;
 int i, j, n, d, count;
-пустая оболочка (int A[], int n)
+void Shell(int A[], int n)
 {
- int count;
- кол - во = 0;
- d = n;
- d = d / 2;
- while (d> 0)
+    int count;
+    count = 0;
+    d = n;
+    d = d / 2;
+    while (d > 0)
     {
- for (i = 0; i < n - d; i++)
+        for (i = 0; i < n - d; i++)
         {
- j = i;
- while (j>= 0 && A[j] > A[j + d])
+            j = i;
+            while (j >= 0 && A[j] > A[j + d])
             {
- count = A[j];
- A[j] = A[j + d];
- A[j + d] = количество;
- j--;
+                count = A[j];
+                A[j] = A[j + d];
+                A[j + d] = count;
+                j--;
             }
         }
- d = d / 2;
+        d = d / 2;
     }
- для (i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
- cout << A[i] << endl;
+        cout << A[i] << endl;
     }
 }
 void main()
 {
- setlocale (LC_ALL, "rus");
- int* A = new int[n];
- cout << "Размер массива :";
- cin >> n;
+    setlocale(LC_ALL, "rus");
+    int* A = new int[n];
+    cout << "Размер массива :";
+    cin >> n;
     
- для (i = 0; i < n; i++)
+    for (i = 0; i < n; i++)
     {
- cout << i + 1 << " Элемент > ";
- cin >> A[i];
+        cout << i + 1 << " Element > ";
+        cin >> A[i];
     }
- cout << "\n Результирующий массив: " << endl;
- Оболочка (A, n);
- исключить[] A;
- система ("пауза>>пустота");
+    cout << "\n Результирующий массив: " << endl;
+    Shell(A, n);
+    delete[] A;
+    system("pause>>void");
 }
