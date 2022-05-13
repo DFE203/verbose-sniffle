@@ -1,47 +1,47 @@
 //сортировка естественным слиянием
-#включить <iostream>
-#включить <cstdlib>
-#включить <ctime>
-использование пространства имен std;
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
 
 int main() {
- int a, i, N;
- srand(время (0));
- cout << "Введите кол-во элементов массива " << endl;
- cin >> N;
- int mas[N];
- cout << "1 - ручной ввод, 2 - автоматический " << endl;
- cin >> a;
- если (a == 1) {
- для (i = 0; i < N; i++) {
- cout << "Введите " << i + 1 << " элемент массив " << endl;
- cin >> mas[i];
+    int a, i, N;
+    srand(time(0));
+    cout << "Введите кол-во элементов массива " << endl;
+    cin >> N;
+    int mas[N];
+    cout << "1 - ручной ввод, 2 - автоматический " << endl;
+    cin >> a;
+    if (a == 1) {
+        for (i = 0; i < N; i++) {
+            cout << "Введите " << i + 1 << " элемент массив " << endl;
+            cin >> mas[i];
         }
     }
- else if (a == 2) {
- для (i = 0; i < N; i++) {
- mas[i] = rand() % 20;
+    else if (a == 2) {
+        for (i = 0; i < N; i++) {
+            mas[i] = rand() % 20;
         }
     }
 
- for (int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
- for (int j = N - 1; j > i; j--)
+        for (int j = N - 1; j > i; j--)
         {
- if (mas[j - 1] > mas[j])
+            if (mas[j - 1] > mas[j])
             {
- int x = mas[j - 1];
- mas[j - 1] = mas[j];
- mas[j] = x;
+                int x = mas[j - 1];
+                mas[j - 1] = mas[j];
+                mas[j] = x;
             }
 
         }
 
     }
 
- для (i = 0; i < N; i++)
+    for (i = 0; i < N; i++)
     {
- cout << mas[i] << " ";
+        cout << mas[i] << " ";
     }
- возврат 0;
+    return 0;
 }
