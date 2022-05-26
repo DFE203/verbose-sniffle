@@ -1,0 +1,64 @@
+#include <iostream>
+#include <math.h>
+#include <time.h>
+using namespace std;
+int vout(int* q, int w)
+{   
+    for (int i=0; i<w; i++)
+{
+    cout<<q[i]<<" ";
+}
+    cout<<"\n";
+    return 0;}
+int vin(int* mas, int n)
+{   
+    srand(time(NULL));
+    for (int i=0; i<=n; i++)
+        mas[i]=rand()%100;
+    return 0;
+}
+int poshyk(int* q,int m,int n)
+{
+    int k=0;
+    for (int i=0;i<n;i++)
+    {
+        if (q[i]==m)
+        {
+            k++;
+            int t=0;
+            t=(i+1);
+            cout << "Mesto = " << t << "\n";
+        } 
+    }
+    return 0;
+}
+int fib(int* q,int n)
+{
+ 
+    int a=0,b=1,z=0;
+    for (int i=0;i<n;i++)
+    {
+        z=(a+b);
+        poshyk(q,z,n);
+        a=b;
+        b=z;
+    }
+ 
+return 0;
+}
+ 
+ 
+ 
+ 
+int main ()
+{
+    int masss[1000];
+    cout << "Enter number (array) = ";
+    int v;
+    cin >> v;
+    cout << "\n";
+    vin(masss,v);
+    vout(masss,v);
+    fib(masss,v);
+    system("pause");
+}
